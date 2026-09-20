@@ -20,7 +20,6 @@ import { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 
 const manufacturingNav = [
-  { path: '/dashboard', label: 'Mfg Dashboard', icon: Factory },
   { path: '/raw-materials', label: 'Raw Materials', icon: FlaskConical },
   { path: '/formulations', label: 'Formulations', icon: TestTube2 },
   { path: '/inventory', label: 'Production & Stock', icon: Warehouse },

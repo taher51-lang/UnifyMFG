@@ -9,7 +9,6 @@ import { exportToCSV } from '../utils/csvExport';
 import ScanStock from "../components/ScanStock";
 import VoiceStock from "../components/VoiceStock";
 import ManualStock from "../components/ManualStock";
-import AudioReports from "../components/AudioReports";
 
 export default function Inventory() {
   const [activeTab, setActiveTab] = useState('stock');
@@ -268,9 +267,6 @@ export default function Inventory() {
         </button>
         <button className={`tab ${activeTab === 'loose-packing' ? 'active' : ''}`} onClick={() => setActiveTab('loose-packing')}>
           <PackagePlus size={14} style={{ marginRight: '6px', verticalAlign: 'middle' }} /> Loose Products
-        </button>
-        <button className={`tab ${activeTab === 'audio-reports' ? 'active' : ''}`} onClick={() => setActiveTab('audio-reports')}>
-          🎤 Audio Reports
         </button>
       </div>
 
@@ -586,11 +582,6 @@ export default function Inventory() {
             </div>
           </div>
         </>
-      )}
-
-      {/* Audio Reports Tab */}
-      {activeTab === 'audio-reports' && (
-        <AudioReports />
       )}
 
       {/* Purchase Modal */}

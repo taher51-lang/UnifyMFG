@@ -4,7 +4,7 @@ import { supabase } from '../api/supabase';
 import { useAuth } from '../contexts/AuthContext';
 
 export default function Login() {
-  const { session, role, roleLoading, accessRestrictedError, clearAccessRestrictedError } = useAuth();
+  const { session } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -12,7 +12,6 @@ export default function Login() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    if (clearAccessRestrictedError) clearAccessRestrictedError();
     setLoading(true);
     setError(null);
     
@@ -27,16 +26,11 @@ export default function Login() {
     setLoading(false);
   };
 
-  // SECURITY: Only explicitly confirmed admin role goes to dashboard.
-  // All other values (employee, null, undefined) go to employee panel.
-  if (session && !roleLoading) {
-    if (role === 'admin') {
-      return <Navigate to="/dashboard" replace />;
-    }
-    return <Navigate to="/employee" replace />;
+  if (session) {
+    return <Navigate to="/raw-materials" replace />;
   }
 
-  const activeError = accessRestrictedError || error;
+  const activeError = error;
 
   return (
     <div style={styles.container}>
@@ -83,11 +77,7 @@ export default function Login() {
           </button>
         </form>
 
-        <div style={{ textAlign: 'center', marginTop: '24px' }}>
-          <Link to="/employee-login" style={{ color: 'var(--text-secondary)', fontSize: '13px', textDecoration: 'none' }}>
-            👷 Employee Login
-          </Link>
-        </div>
+        
       </div>
     </div>
   );

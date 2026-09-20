@@ -5,7 +5,6 @@ import { BrowserRouter, Routes, Route, Navigate, Outlet } from 'react-router-dom
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import Login from './pages/Login';
 import Sidebar from './components/Sidebar';
-import Dashboard from './pages/Dashboard';
 import TradingDashboard from './pages/TradingDashboard';
 import RawMaterials from './pages/RawMaterials';
 import Formulations from './pages/Formulations';
@@ -56,8 +55,8 @@ function App() {
 
           {/* Admin Routes */}
           <Route element={<AdminProtectedLayout />}>
-            <Route path="/" element={<Navigate to="/dashboard" replace />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/" element={<Navigate to="/raw-materials" replace />} />
+            
             <Route path="/trading" element={<TradingDashboard />} />
             <Route path="/raw-materials" element={<RawMaterials />} />
             <Route path="/formulations" element={<Formulations />} />

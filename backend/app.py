@@ -16,7 +16,6 @@ from routes.reports import reports_bp
 from routes.system import system_bp
 from routes.scan_stock import scan_stock_bp
 from routes.voice_stock import voice_stock_bp
-from routes.admin_audio import admin_audio_bp
 from config import FLASK_SECRET_KEY
 # 
 
@@ -60,7 +59,6 @@ def create_app():
     try:
         from apscheduler.schedulers.background import BackgroundScheduler
         from scripts.backup import backup as run_backup_logic
-        from routes.admin_audio import cleanup_old_audio
         scheduler = BackgroundScheduler()
         scheduler.add_job(func=run_backup_logic, trigger="cron", day_of_week='sat', hour=23, minute=59)
         scheduler.add_job(func=cleanup_old_audio, trigger="cron", hour=3, minute=0)
@@ -79,7 +77,6 @@ def create_app():
     app.register_blueprint(system_bp, url_prefix="/api/system")
     app.register_blueprint(scan_stock_bp, url_prefix="/api")
     app.register_blueprint(voice_stock_bp, url_prefix="/api")
-    app.register_blueprint(admin_audio_bp, url_prefix="/api/admin")
 
     @app.route("/api/health")
     def health():

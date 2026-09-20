@@ -5,15 +5,17 @@ import os
 from dotenv import load_dotenv
 from supabase import create_client, Client
 
+basedir = os.path.dirname(os.path.abspath(__file__))
+
 # First, load the default .env (common variables)
-load_dotenv(".env")
+load_dotenv(os.path.join(basedir, '.env'))
 
 # Then, load environment-specific overrides
-env = os.environ.get("FLASK_ENV", "development")
-if env == "production":
-    load_dotenv(".env.production", override=True)
+env = os.environ.get('FLASK_ENV', 'development')
+if env == 'production':
+    load_dotenv(os.path.join(basedir, '.env.production'), override=True)
 else:
-    load_dotenv(".env.development", override=True)
+    load_dotenv(os.path.join(basedir, '.env.development'), override=True)
 
 # Required environment variables
 SUPABASE_URL = os.getenv("SUPABASE_URL")
