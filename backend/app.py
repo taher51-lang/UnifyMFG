@@ -16,9 +16,7 @@ from routes.reports import reports_bp
 from routes.system import system_bp
 from routes.scan_stock import scan_stock_bp
 from routes.voice_stock import voice_stock_bp
-from routes.employee import employee_bp
 from routes.admin_audio import admin_audio_bp
-from routes.admin_employee import admin_employee_bp
 from config import FLASK_SECRET_KEY
 # 
 
@@ -81,9 +79,7 @@ def create_app():
     app.register_blueprint(system_bp, url_prefix="/api/system")
     app.register_blueprint(scan_stock_bp, url_prefix="/api")
     app.register_blueprint(voice_stock_bp, url_prefix="/api")
-    app.register_blueprint(employee_bp, url_prefix="/api/employee")
     app.register_blueprint(admin_audio_bp, url_prefix="/api/admin")
-    app.register_blueprint(admin_employee_bp, url_prefix="/api/admin")
 
     @app.route("/api/health")
     def health():

@@ -21,7 +21,7 @@ export default function InvoicePrint({ invoice }) {
       {/* Header */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '24px' }}>
         <div>
-          <h1 style={{ fontSize: '1.8rem', fontWeight: 800, margin: 0, color: '#1a1a2e' }}>Flavour & Essence</h1>
+          <h1 style={{ fontSize: '1.8rem', fontWeight: 800, margin: 0, color: '#1a1a2e' }}>UnifyMFG</h1>
           <p style={{ color: '#666', fontSize: '0.85rem', margin: '4px 0 0' }}>Home Manufacturing Business</p>
         </div>
         <div style={{ textAlign: 'right' }}>

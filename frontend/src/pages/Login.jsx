@@ -42,7 +42,7 @@ export default function Login() {
     <div style={styles.container}>
       <div style={styles.card}>
         <div style={styles.header}>
-          <h1 style={styles.title}>Flavour & Essence</h1>
+          <h1 style={styles.title}>UnifyMFG</h1>
           <p style={styles.subtitle}>Business Operations System</p>
         </div>
         
@@ -54,7 +54,7 @@ export default function Login() {
             <input 
               type="email" 
               className="form-control" 
-              placeholder="admin@flavour.com"
+              placeholder="admin@unifymfg.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required 

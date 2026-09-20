@@ -4,7 +4,6 @@
 import { BrowserRouter, Routes, Route, Navigate, Outlet } from 'react-router-dom';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import Login from './pages/Login';
-import EmployeeLogin from './pages/EmployeeLogin';
 import Sidebar from './components/Sidebar';
 import Dashboard from './pages/Dashboard';
 import TradingDashboard from './pages/TradingDashboard';
@@ -16,8 +15,6 @@ import Customers from './pages/Customers';
 import Ledger from './pages/Ledger';
 import Invoices from './pages/Invoices';
 import Reports from './pages/Reports';
-import EmployeePanel from './pages/EmployeePanel';
-import EmployeeActivity from './pages/EmployeeActivity';
 import './App.css';
 
 import { AppProvider } from './context/AppContext';
@@ -36,8 +33,6 @@ const AdminProtectedLayout = () => {
   
   if (!session) return <Navigate to="/login" replace />;
   
-  if (role !== 'admin') return <Navigate to="/employee" replace />;
-  
   return (
     <AppProvider>
       <div className="app-layout">
@@ -50,24 +45,6 @@ const AdminProtectedLayout = () => {
   );
 };
 
-// Layout for Employee Panel
-const EmployeeProtectedLayout = () => {
-  const { session, loading, role, roleLoading } = useAuth();
-  
-  if (loading || roleLoading) return <LoadingSpinner />;
-  
-  if (!session) return <Navigate to="/employee-login" replace />;
-  
-  if (role === 'admin') return <Navigate to="/dashboard" replace />;
-  
-  return (
-    <div className="app-layout" style={{ display: 'block' }}>
-      <main className="main-content" style={{ marginLeft: 0, padding: 0 }}>
-        <Outlet />
-      </main>
-    </div>
-  );
-};
 
 function App() {
   return (
@@ -76,12 +53,6 @@ function App() {
         <Routes>
           {/* Public Routes */}
           <Route path="/login" element={<Login />} />
-          <Route path="/employee-login" element={<EmployeeLogin />} />
-          
-          {/* Employee Routes */}
-          <Route element={<EmployeeProtectedLayout />}>
-            <Route path="/employee" element={<EmployeePanel />} />
-          </Route>
 
           {/* Admin Routes */}
           <Route element={<AdminProtectedLayout />}>
@@ -96,7 +67,6 @@ function App() {
             <Route path="/ledger" element={<Ledger />} />
             <Route path="/invoices" element={<Invoices />} />
             <Route path="/reports" element={<Reports />} />
-            <Route path="/employee-activity" element={<EmployeeActivity />} />
           </Route>
 
           {/* Catch-all: redirect to login for role-based triage (NOT inside admin guard) */}
