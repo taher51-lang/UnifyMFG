@@ -1,4 +1,0 @@
-name,unit,price_per_unit,stock_qty
-Test Chemical A,kg,150.5,10
-Test Chemical B,L,200.0,5
-Invalid Unit Chem,x,100,0
