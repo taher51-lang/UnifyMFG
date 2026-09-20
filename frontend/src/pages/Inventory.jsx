@@ -665,7 +665,7 @@ export default function Inventory() {
                   <h3 style={{ fontSize: '14px', marginTop: 0, marginBottom: '12px' }}>Yield Allocation</h3>
                   {products.filter(p => p.formulation_id === productionForm.formulation_id).map(p => (
                     <div key={p.id} className="form-row" style={{ alignItems: 'center', marginBottom: '8px' }}>
-                      <div style={{ flex: 1, fontSize: '14px', fontWeight: '500' }}>{p.name} (Fill: {p.fill_volume} kg/L)</div>
+                      <div style={{ flex: 1, fontSize: '14px', fontWeight: '500' }}>{p.name} (Fill: {p.packaging_size})</div>
                       <div style={{ width: '120px' }}>
                         <input 
                           className="form-control" 
@@ -689,7 +689,7 @@ export default function Inventory() {
                     let yieldedVol = 0;
                     products.filter(p => p.formulation_id === productionForm.formulation_id).forEach(p => {
                       const qty = parseFloat(productionForm.yields[p.id] || 0);
-                      yieldedVol += qty * parseFloat(p.fill_volume || 0);
+                      yieldedVol += qty * parseFloat(p.packaging_size || 0);
                     });
                     
                     const isValid = Math.abs(expectedVol - yieldedVol) <= 0.01;
@@ -700,7 +700,7 @@ export default function Inventory() {
                           <strong>Expected Liquid:</strong> {expectedVol.toFixed(2)} {form?.batch_unit}
                         </div>
                         <div style={{ color: isValid ? '#065f46' : '#991b1b', fontSize: '13px' }}>
-                          <strong>Yielded Bottled:</strong> {yieldedVol.toFixed(2)} kg/L
+                          <strong>Yielded Bottled:</strong> {yieldedVol.toFixed(2)} {form?.batch_unit}
                         </div>
                       </div>
                     );
@@ -723,7 +723,7 @@ export default function Inventory() {
                     let yieldedVol = 0;
                     products.filter(p => p.formulation_id === productionForm.formulation_id).forEach(p => {
                       const qty = parseFloat(productionForm.yields[p.id] || 0);
-                      yieldedVol += qty * parseFloat(p.fill_volume || 0);
+                      yieldedVol += qty * parseFloat(p.packaging_size || 0);
                     });
                     return Math.abs(expectedVol - yieldedVol) > 0.01 || expectedVol === 0;
                   })()}
