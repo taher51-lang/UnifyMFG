@@ -1,0 +1,80 @@
+Current thread 0x000000016c3b3000 [Thread-1] (most recent call first):
+  File "<string>", line 1 in <lambda>
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/threading.py", line 1385 in run
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/threading.py", line 1082 in _bootstrap_inner
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/threading.py", line 1044 in _bootstrap
+
+Thread 0x00000001f56c2c40 (most recent call first):
+  File "<frozen importlib._bootstrap_external>", line 951 in get_data
+  File "<frozen importlib._bootstrap_external>", line 851 in get_code
+  File "<frozen importlib._bootstrap_external>", line 755 in exec_module
+  File "<frozen importlib._bootstrap>", line 938 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1342 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1371 in _find_and_load
+  File "/Users/admin/Desktop/flavour/backend/venv/lib/python3.14/site-packages/werkzeug/http.py", line 1443 in <module>
+  File "<frozen importlib._bootstrap>", line 491 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 759 in exec_module
+  File "<frozen importlib._bootstrap>", line 938 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1342 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1371 in _find_and_load
+  File "/Users/admin/Desktop/flavour/backend/venv/lib/python3.14/site-packages/werkzeug/serving.py", line 36 in <module>
+  File "<frozen importlib._bootstrap>", line 491 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 759 in exec_module
+  File "<frozen importlib._bootstrap>", line 938 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1342 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1371 in _find_and_load
+  File "/Users/admin/Desktop/flavour/backend/venv/lib/python3.14/site-packages/werkzeug/__init__.py", line 1 in <module>
+  File "<frozen importlib._bootstrap>", line 491 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 759 in exec_module
+  File "<frozen importlib._bootstrap>", line 938 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1342 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1371 in _find_and_load
+  File "<frozen importlib._bootstrap>", line 491 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1314 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1371 in _find_and_load
+  File "/Users/admin/Desktop/flavour/backend/venv/lib/python3.14/site-packages/flask/globals.py", line 6 in <module>
+  File "<frozen importlib._bootstrap>", line 491 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 759 in exec_module
+  File "<frozen importlib._bootstrap>", line 938 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1342 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1371 in _find_and_load
+  File "/Users/admin/Desktop/flavour/backend/venv/lib/python3.14/site-packages/flask/json/__init__.py", line 6 in <module>
+  File "<frozen importlib._bootstrap>", line 491 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 759 in exec_module
+  File "<frozen importlib._bootstrap>", line 938 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1342 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1371 in _find_and_load
+  File "<frozen importlib._bootstrap>", line 491 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1434 in _handle_fromlist
+  File "/Users/admin/Desktop/flavour/backend/venv/lib/python3.14/site-packages/flask/__init__.py", line 5 in <module>
+  File "<frozen importlib._bootstrap>", line 491 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 759 in exec_module
+  File "<frozen importlib._bootstrap>", line 938 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1342 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1371 in _find_and_load
+  File "/Users/admin/Desktop/flavour/backend/app.py", line 3 in <module>
+  File "<frozen importlib._bootstrap>", line 491 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 759 in exec_module
+  File "<frozen importlib._bootstrap>", line 938 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1342 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1371 in _find_and_load
+  File "<string>", line 1 in <module>
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import faulthandler, sys, threading; faulthandler.enable(); threading.Timer(3, lambda: faulthandler.dump_traceback(file=sys.stderr)).start(); import app
+                                                                                                                                                  ^^^^^^^^^^
+  File "/Users/admin/Desktop/flavour/backend/app.py", line 3, in <module>
+    from flask import Flask
+  File "/Users/admin/Desktop/flavour/backend/venv/lib/python3.14/site-packages/flask/__init__.py", line 6, in <module>
+  File "/Users/admin/Desktop/flavour/backend/venv/lib/python3.14/site-packages/flask/app.py", line 14, in <module>
+  File "/Users/admin/Desktop/flavour/backend/venv/lib/python3.14/site-packages/click/__init__.py", line 10, in <module>
+  File "/Users/admin/Desktop/flavour/backend/venv/lib/python3.14/site-packages/click/core.py", line 21, in <module>
+  File "/Users/admin/Desktop/flavour/backend/venv/lib/python3.14/site-packages/click/types.py", line 15, in <module>
+  File "/Users/admin/Desktop/flavour/backend/venv/lib/python3.14/site-packages/click/exceptions.py", line 9, in <module>
+  File "<frozen importlib._bootstrap>", line 1371, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1342, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 938, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 755, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 892, in get_code
+  File "<frozen importlib._bootstrap_external>", line 950, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/admin/Desktop/flavour/backend/venv/lib/python3.14/site-packages/click/globals.py'
