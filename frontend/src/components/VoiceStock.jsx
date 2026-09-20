@@ -384,8 +384,7 @@ function ProductDropdown({ value, onChange, products, candidates = [] }) {
               <span>{opt.name}</span>
             </div>
           ))}
-        </div>,
-        document.body
+        </div>
       )}
     </div>
   );

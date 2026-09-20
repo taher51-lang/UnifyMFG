@@ -20,6 +20,7 @@ import { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 
 const manufacturingNav = [
+  { path: '/dashboard', label: 'Mfg Dashboard', icon: Factory },
   { path: '/raw-materials', label: 'Raw Materials', icon: FlaskConical },
   { path: '/formulations', label: 'Formulations', icon: TestTube2 },
   { path: '/inventory', label: 'Production & Stock', icon: Warehouse },
@@ -34,6 +35,9 @@ const tradingNav = [
   { path: '/reports', label: 'Reports', icon: BarChart3 },
 ];
 
+const managementNav = [
+  { path: '/employee-activity', label: 'Employee Activity', icon: ShieldCheck },
+];
 
 export default function Sidebar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -89,8 +93,8 @@ export default function Sidebar() {
             <Package size={22} />
           </div>
           <div className="sidebar-brand-text">
-            <span className="sidebar-brand-name">UnifyMFG</span>
-            <span className="sidebar-brand-sub">Smart Factory OS</span>
+            <span className="sidebar-brand-name">Flavour & Essence</span>
+            <span className="sidebar-brand-sub">Business Operations</span>
           </div>
         </div>
 
@@ -99,6 +103,8 @@ export default function Sidebar() {
           {renderNavSection(manufacturingNav, '🏭 Manufacturing', 'var(--accent-primary)')}
           <div className="sidebar-divider" />
           {renderNavSection(tradingNav, '🏪 Trading', 'var(--accent-secondary)')}
+          <div className="sidebar-divider" />
+          {renderNavSection(managementNav, '🛡️ Staff & Audit', '#3b82f6')}
         </nav>
 
         {/* Footer */}

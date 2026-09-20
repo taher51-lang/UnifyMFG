@@ -1,0 +1,22 @@
+openapi: 3.0.0
+info:
+  title: UnifyMFG API
+  version: 1.0.0
+  description: Smart Factory OS API for manufacturing execution and inventory.
+servers:
+  - url: /api
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+security:
+  - bearerAuth: []
+paths:
+  /raw_materials:
+    get:
+      summary: List raw materials
+      responses:
+        '200':
+          description: Success
